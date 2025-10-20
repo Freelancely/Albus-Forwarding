@@ -28,22 +28,22 @@ export default function About() {
 
   const milestones = [
     {
-      year: "2015",
+      year: "1",
       title: "Founded",
       description: "Albus Forwarding established with a vision to revolutionize logistics in Nepal.",
     },
     {
-      year: "2017",
+      year: "2",
       title: "Regional Expansion",
       description: "Expanded operations to South Asia with partnerships in India and Bangladesh.",
     },
     {
-      year: "2019",
+      year: "3",
       title: "Global Network",
       description: "Established connections with major logistics hubs across Europe and Asia.",
     },
     {
-      year: "2023",
+      year: "4",
       title: "Technology Integration",
       description: "Launched advanced tracking and management systems for real-time visibility.",
     },
