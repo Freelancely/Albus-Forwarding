@@ -75,7 +75,7 @@ export default function Contact() {
     {
       icon: MapPin,
       title: "Address",
-      details: ["New Baneshwor", "Kathmandu, Nepal"],
+      details: ["Mid Baneshwor", "Kathmandu, Nepal"],
     },
     {
       icon: Phone,

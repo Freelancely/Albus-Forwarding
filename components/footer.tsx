@@ -74,7 +74,7 @@ export function Footer() {
             <div className="space-y-3 text-sm">
               <div className="flex gap-2">
                 <MapPin size={16} className="flex-shrink-0 mt-0.5" />
-                <p>New Baneshwor, Kathmandu, Nepal</p>
+                <p>Mid Baneshwor, Kathmandu, Nepal</p>
               </div>
               <div className="flex gap-2">
                 <Phone size={16} className="flex-shrink-0 mt-0.5" />
