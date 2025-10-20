@@ -101,12 +101,10 @@ export default function About() {
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center animate-fade-in-up">Our Story</h2>
             <div className="prose prose-lg max-w-none">
               <p className="text-muted-foreground leading-relaxed mb-6 animate-fade-in-up animate-delay-100">
-                Albus Forwarding was founded in 2015 with a simple yet ambitious goal: to transform the logistics
-                landscape in Nepal. What started as a small team of passionate professionals has grown into a
-                comprehensive logistics solution provider serving clients across multiple continents.
+                Albus Forwarding was founded in 2025 with a simple yet ambitious goal: to transform the logistics landscape in Nepal. What started as a small team of passionate professionals has grown into a comprehensive logistics solution provider serving clients across multiple continents.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-6 animate-fade-in-up animate-delay-200">
-                Over the years, we've built a reputation for reliability, innovation, and customer-centric service. Our
+                We've built a reputation for reliability, innovation, and customer-centric service. Our
                 team has invested in cutting-edge technology, developed strategic partnerships with global logistics
                 leaders, and continuously adapted to meet the evolving needs of our clients.
               </p>
