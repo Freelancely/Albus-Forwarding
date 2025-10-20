@@ -281,16 +281,16 @@ export default function Contact() {
 
               {/* Map */}
               <div className="rounded-lg overflow-hidden border border-border h-full min-h-96 animate-slide-in-right">
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.543098207633!2d85.33591517532262!3d27.697190976193865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19bb7b6d0305%3A0x4df5d8c5426d4f0!2sMid%20Baneshwar%2C%20Kathmandu!5e0!3m2!1sen!2snp!4v1729422212345"
-    width="100%"
-    height="100%"
-    style={{ border: 0, minHeight: "400px" }}
-    allowFullScreen
-    loading="lazy"
-    referrerPolicy="no-referrer-when-downgrade"
-  ></iframe>
-</div>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.543098207633!2d85.33591517532262!3d27.697190976193865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19bb7b6d0305%3A0x4df5d8c5426d4f0!2sMid%20Baneshwar%2C%20Kathmandu!5e0!3m2!1sen!2snp!4v1729422212345"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, minHeight: "400px" }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
 
             </div>
           </div>
