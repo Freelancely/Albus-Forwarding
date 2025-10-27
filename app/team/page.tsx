@@ -1,6 +1,9 @@
+"use client"
+
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Linkedin, Mail, Phone } from "lucide-react"
+import { useState } from "react"
 
 export default function Team() {
   const teamMembers = [
@@ -8,13 +11,55 @@ export default function Team() {
       id: 1,
       name: "Mr. Atul Chandra Paudyal",
       role: "Sales and Marketing Manager",
-      bio: "Atul leads our Sales and Marketing Department with extensive experience in freight forwarding and client relationship management. He ensures Albus Forwarding delivers exceptional service and builds lasting partnerships with our valued clients.",
+      bio: "Atul leads our Sales and Marketing Department with extensive experience in freight forwarding and client relationship management.",
       expertise: ["Sales Strategy", "Client Relations", "Market Development"],
       email: "atul.paudyal@albusforwarding.com",
       phone: "9841360085",
       image: "/professional-man-suit.png",
     },
+    {
+      id: 2,
+      name: "Ms. Nisha Bhattarai",
+      role: "Office Administration",
+      bio: "Nisha oversees our office operations, ensuring smooth administrative processes and efficient coordination across departments.",
+      expertise: ["Office Management", "Administrative Support", "Coordination"],
+      email: "nisha.bhattarai@albusforwarding.com",
+      phone: "9805533904",
+      image: "/placeholder.svg",
+    },
+    {
+      id: 3,
+      name: "Mr. Sumit Manandhar",
+      role: "Accountant",
+      bio: "Sumit manages our financial operations, ensuring accuracy and compliance in all accounting processes.",
+      expertise: ["Financial Management", "Accounting", "Budget Planning"],
+      email: "sumit.manandhar@albusforwarding.com",
+      phone: "9805533905",
+      image: "/placeholder.svg",
+    },
+    {
+      id: 4,
+      name: "Mr. Mandip Chaudhary",
+      role: "Operation Officer",
+      bio: "Mandip ensures seamless logistics operations, coordinating efficiently to meet client needs and operational goals.",
+      expertise: ["Logistics Operations", "Process Optimization", "Client Coordination"],
+      email: "mandip.chaudhary@albusforwarding.com",
+      phone: "9818396231 / 9801831135",
+      image: "/placeholder.svg",
+    },
   ]
+
+  // State for slider
+  const [currentIndex, setCurrentIndex] = useState(0)
+
+  // Slider navigation
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % teamMembers.length)
+  }
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + teamMembers.length) % teamMembers.length)
+  }
 
   return (
     <>
@@ -25,7 +70,7 @@ export default function Team() {
             <div className="text-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-balance animate-fade-in-down">Our Team</h1>
               <p className="text-lg opacity-90 max-w-2xl mx-auto text-balance animate-fade-in-up animate-delay-100">
-                Meet the dedicated professional behind Albus Forwarding's success
+                Meet the dedicated professionals behind Albus Forwarding's success
               </p>
             </div>
           </div>
@@ -35,7 +80,7 @@ export default function Team() {
         <section className="py-16 md:py-24 bg-background">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 animate-fade-in-up">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Experienced Professional</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Experienced Professionals</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Our team combines industry experience with a passion for excellence and customer satisfaction.
               </p>
@@ -43,67 +88,115 @@ export default function Team() {
           </div>
         </section>
 
-        {/* Leadership Team */}
+        {/* Leadership Team Slider */}
         <section className="py-16 md:py-24 bg-muted">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center animate-fade-in-up">Leadership Team</h2>
 
-            <div className="grid grid-cols-1 gap-8 max-w-4xl mx-auto">
-              {teamMembers.map((member, index) => (
+            <div className="relative">
+              {/* Slider Container */}
+              <div className="overflow-hidden">
                 <div
-                  key={member.id}
-                  className="bg-background rounded-lg overflow-hidden border border-border hover:shadow-lg transition card-hover animate-fade-in-up"
+                  className="flex transition-transform duration-500 ease-in-out"
+                  style={{ transform: `translateX(-${currentIndex * 100}%)` }}
                 >
-                  <div className="aspect-square overflow-hidden bg-muted">
-                    <img
-                      src={member.image || "/placeholder.svg"}
-                      alt={member.name}
-                      className="w-full h-full object-cover hover:scale-105 transition duration-300"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold mb-1">{member.name}</h3>
-                    <p className="text-accent font-semibold mb-4">{member.role}</p>
-                    <p className="text-muted-foreground text-sm mb-4 leading-relaxed">{member.bio}</p>
+                  {teamMembers.map((member) => (
+                    <div
+                      key={member.id}
+                      className="min-w-full md:min-w-[50%] lg:min-w-[33.33%] px-4"
+                    >
+                      <div className="bg-background rounded-lg overflow-hidden border border-border hover:shadow-lg transition card-hover animate-fade-in-up">
+                        <div className="aspect-square overflow-hidden bg-muted">
+                          <img
+                            src={member.image || "/placeholder.svg"}
+                            alt={member.name}
+                            className="w-full h-full object-cover hover:scale-105 transition duration-300"
+                          />
+                        </div>
+                        <div className="p-6">
+                          <h3 className="text-xl font-bold mb-1">{member.name}</h3>
+                          <p className="text-accent font-semibold mb-4">{member.role}</p>
+                          <p className="text-muted-foreground text-sm mb-4 leading-relaxed">{member.bio}</p>
 
-                    <div className="mb-6">
-                      <p className="text-xs font-semibold text-foreground mb-2 uppercase">Expertise</p>
-                      <div className="flex flex-wrap gap-2">
-                        {member.expertise.map((skill, i) => (
-                          <span key={i} className="bg-accent/10 text-accent text-xs px-3 py-1 rounded-full">
-                            {skill}
-                          </span>
-                        ))}
+                          <div className="mb-6">
+                            <p className="text-xs font-semibold text-foreground mb-2 uppercase">Expertise</p>
+                            <div className="flex flex-wrap gap-2">
+                              {member.expertise.map((skill, i) => (
+                                <span key={i} className="bg-accent/10 text-accent text-xs px-3 py-1 rounded-full">
+                                  {skill}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+
+                          <div className="space-y-3">
+                            <a
+                              href={`mailto:${member.email}`}
+                              className="flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:opacity-90 transition text-sm smooth-transition w-full justify-center"
+                            >
+                              <Mail size={16} />
+                              {member.email}
+                            </a>
+                            <a
+                              href={`tel:${member.phone.split(" / ")[0]}`}
+                              className="flex items-center gap-2 bg-muted text-foreground px-4 py-2 rounded-lg hover:bg-muted/80 transition text-sm smooth-transition w-full justify-center"
+                            >
+                              <Phone size={16} />
+                              {member.phone}
+                            </a>
+                          </div>
+                        </div>
                       </div>
                     </div>
-
-                    <div className="space-y-3">
-                      <a
-                        href={`mailto:${member.email}`}
-                        className="flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:opacity-90 transition text-sm smooth-transition w-full justify-center"
-                      >
-                        <Mail size={16} />
-                        {member.email}
-                      </a>
-                      <a
-                        href={`tel:${member.phone}`}
-                        className="flex items-center gap-2 bg-muted text-foreground px-4 py-2 rounded-lg hover:bg-muted/80 transition text-sm smooth-transition w-full justify-center"
-                      >
-                        <Phone size={16} />
-                        {member.phone}
-                      </a>
-                      {/* <a
-                        href="#"
-                        className="flex items-center justify-center gap-2 bg-accent text-accent-foreground px-4 py-2 rounded-lg hover:opacity-90 transition text-sm smooth-transition w-full"
-                        aria-label="LinkedIn"
-                      >
-                        <Linkedin size={16} />
-                        LinkedIn
-                      </a> */}
-                    </div>
-                  </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+
+              {/* Navigation Buttons */}
+              <button
+                onClick={prevSlide}
+                className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-primary text-primary-foreground p-2 rounded-full hover:opacity-90 transition"
+                aria-label="Previous slide"
+              >
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <button
+                onClick={nextSlide}
+                className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-primary text-primary-foreground p-2 rounded-full hover:opacity-90 transition"
+                aria-label="Next slide"
+              >
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+
+              {/* Dots for Slider */}
+              <div className="flex justify-center mt-6 space-x-2">
+                {teamMembers.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentIndex(index)}
+                    className={`w-3 h-3 rounded-full ${
+                      currentIndex === index ? "bg-primary" : "bg-muted-foreground/50"
+                    } hover:bg-primary/70 transition`}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </section>

@@ -91,6 +91,8 @@ export function Footer() {
         {/* Social Links */}
         <div className="border-t border-primary-foreground/20 pt-8 flex justify-between items-center">
           <p className="text-sm opacity-75">© 2025 Albus Forwarding Pvt. Ltd. All rights reserved.</p>
+          <br />
+          {/* <p className="text-sm opacity-75">Created by <a href="https://freelancely.com.np">Freelancely</a>.</p> */}
           <div className="flex gap-4">
             <a href="#" className="hover:text-accent transition" aria-label="Facebook">
               <Facebook size={20} />
