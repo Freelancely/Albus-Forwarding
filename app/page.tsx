@@ -63,7 +63,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-balance animate-fade-in-down">
-                Delivering Global Logistics Solutions Beyond Boundaries
+                "Your cargo, our commitment - Efficiently Delivered"
               </h1>
               <p className="text-lg md:text-xl opacity-90 mb-8 max-w-2xl mx-auto text-balance animate-fade-in-up animate-delay-100">
                 Professional freight forwarding and logistics services connecting Nepal to the world with reliability,
